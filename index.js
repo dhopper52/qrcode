@@ -9,6 +9,9 @@ const port = 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Serve static files (like logo image) from the "assets" folder
+app.use(express.static('assets'));
+
 // Serve a simple form to input the link
 app.get('/', (req, res) => {
   res.send(`
@@ -17,16 +20,24 @@ app.get('/', (req, res) => {
         <style>
           body {
             font-family: Arial, sans-serif;
+            background-color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
             margin: 0;
-            background-color: #f4f4f9;
-          }
+           }
           .container {
             text-align: center;
-          }
+            height: 100vh;
+             display: flex;
+             align-items: center;
+           }
+            .image-container {
+            text-align: center;
+            margin-top: 37px;
+             }
           form {
             margin-bottom: 20px;
           }
@@ -51,7 +62,11 @@ app.get('/', (req, res) => {
         </style>
       </head>
       <body>
+         <div class="image-container">
+            <img src="/logo.png" alt="Logo" style="width: 150px;"><br>
+          </div>
         <div class="container">
+       
           <form action="/generate" method="POST">
             <label for="link">Enter a link:</label><br>
             <input type="text" id="link" name="link" placeholder="Enter your URL here"><br>
@@ -78,16 +93,28 @@ app.post('/generate', (req, res) => {
           <style>
             body {
               font-family: Arial, sans-serif;
+               background-color: white;
               display: flex;
               justify-content: center;
               align-items: center;
+              flex-direction: column;
               height: 100vh;
               margin: 0;
-              background-color: #f4f4f9;
-            }
+             }
             .container {
               text-align: center;
+               height: 100vh;
+             display: flex;
+             align-items: center;
+                 margin-top: 100px;
+              flex-direction: column;
+
             }
+             .image-container {
+            text-align: center;
+            margin-top: 37px;
+             }
+             
             img {
               margin-top: 20px;
             }
@@ -107,6 +134,10 @@ app.post('/generate', (req, res) => {
           </style>
         </head>
         <body>
+              <div class="image-container">
+            <img src="/logo.png" alt="Logo" style="width: 150px;"><br>
+          </div>
+
           <div class="container">
             <p>Here is your QR Code:</p>
             <img src="${src}" alt="QR Code"><br>
