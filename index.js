@@ -63,7 +63,7 @@ app.get('/', (req, res) => {
       </head>
       <body>
          <div class="image-container">
-            <img src="/logo.png" alt="Logo" style="width: 150px;"><br>
+            <img src="https://i.postimg.cc/Ss53b2b0/D-Hoppers.png" alt="Logo" style="width: 150px;"><br>
           </div>
         <div class="container">
        
@@ -135,7 +135,8 @@ app.post('/generate', (req, res) => {
         </head>
         <body>
               <div class="image-container">
-            <img src="/logo.png" alt="Logo" style="width: 150px;"><br>
+            <img src="https://i.postimg.cc/Ss53b2b0/D-Hoppers.png" alt="Logo" style="width: 150px;"><br>
+            
           </div>
 
           <div class="container">
